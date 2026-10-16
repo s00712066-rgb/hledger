@@ -1,0 +1,709 @@
+/* =========================================================
+   H-LEDGER
+   Modern responsive dark UI
+   ========================================================= */
+
+/* ---------- Global ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0b0d10;
+  color: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Keep the application centered on larger screens */
+main,
+.zero {
+  width: min(100% - 32px, 1100px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  padding: 24px 0 50px;
+}
+
+/* ---------- Navigation ---------- */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  width: 100%;
+  min-height: 72px;
+  padding: 12px max(16px, calc((100% - 1100px) / 2));
+
+  background: rgba(11, 13, 16, 0.94);
+  border-bottom: 1px solid #252a31;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  backdrop-filter: blur(12px);
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+nav button {
+  margin: 0;
+  padding: 11px 18px;
+  min-height: 44px;
+
+  background: #2563eb;
+  color: white;
+
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ---------- Intro / Search ---------- */
+
+.zero {
+  margin-top: 100px;
+  padding: 20px 0 10px;
+}
+
+.zero > p {
+  margin: 0 0 14px;
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+.search_box {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.search {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+
+  background: #12161b;
+  color: #f5f7fa;
+
+  border: 1px solid #30363d;
+  border-radius: 12px;
+
+  outline: none;
+  font-size: 15px;
+}
+
+.search::placeholder {
+  color: #6b7280;
+}
+
+.search:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* ---------- Sections ---------- */
+
+.one,
+.three,
+.four {
+  margin-top: 20px;
+}
+
+.one h2,
+.four h3 {
+  margin-top: 0;
+}
+
+/* ---------- Forms ---------- */
+
+form {
+  width: 100%;
+  margin: 20px 0;
+
+  padding: 24px;
+
+  background: #11151a;
+  border: 1px solid #292f36;
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+form h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+form p {
+  color: #aeb6c2;
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 700px;
+
+  background: #0b0f13;
+  color: #f5f7fa;
+
+  border: 1px solid #30363d;
+  border-radius: 10px;
+
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+input {
+  min-height: 46px;
+  padding: 12px 14px;
+}
+
+textarea {
+  min-height: 140px;
+  padding: 14px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #69717d;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+  min-height: 42px;
+  padding: 10px 16px;
+
+  background: #2563eb;
+  color: white;
+
+  border: 1px solid #3b82f6;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+  border-color: #60a5fa;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Button groups */
+
+.btns,
+.debtFormBtns {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btns button,
+.debtFormBtns button {
+  flex: 1;
+}
+
+/* Buttons used throughout the application */
+
+.btn3,
+.btn4,
+.btn5,
+.btn6,
+.btn7,
+.btn8,
+.btn9,
+.btn10,
+.btn11,
+.btn12,
+.btn13,
+.btn14 {
+  width: 100%;
+  padding: 11px 14px;
+}
+
+/* Secondary / cancel buttons */
+
+.btn4,
+.btn12,
+.btn14,
+.no,
+.btn7 {
+  background: #1a1f26;
+  border-color: #343b44;
+  color: #d1d5db;
+}
+
+.btn4:hover,
+.btn12:hover,
+.btn14:hover,
+.no:hover,
+.btn7:hover {
+  background: #252b33;
+  border-color: #4b5563;
+}
+
+/* Delete buttons */
+
+.yes,
+.btn10 {
+  background: #b91c1c;
+  border-color: #dc2626;
+}
+
+.yes:hover,
+.btn10:hover {
+  background: #991b1b;
+}
+
+/* ---------- Customer Cards ---------- */
+
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  min-width: 0;
+
+  padding: 18px;
+
+  background: #12161b;
+  border: 1px solid #292f36;
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  font-weight: bold;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #171c22;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.card button {
+  flex-shrink: 0;
+  background: #252b33;
+  border-color: #3a424c;
+  color: #d1d5db;
+}
+
+.card button:hover {
+  background: #b91c1c;
+  border-color: #dc2626;
+  color: white;
+}
+
+/* ---------- Debt Cards ---------- */
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card2 {
+  width: 100%;
+  padding: 18px;
+
+  background: #12161b;
+  border: 1px solid #292f36;
+  border-radius: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.card2:hover {
+  border-color: #3b82f6;
+  background: #151a20;
+}
+
+.card2 p {
+  margin: 8px 0;
+  color: #b9c1cc;
+  overflow-wrap: anywhere;
+}
+
+/* Debt card title row */
+
+.card2 > div:first-child {
+  gap: 12px;
+}
+
+.card2 > div:first-child p:first-child {
+  color: #f5f7fa;
+  font-weight: 700;
+}
+
+/* ---------- Debt Information ---------- */
+
+.item_name,
+.original_amount,
+.remaining_amount,
+.date,
+.notes,
+.status {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+
+  background: #11151a;
+  border: 1px solid #252b32;
+  border-radius: 10px;
+}
+
+.remaining_amount {
+  color: #fbbf24;
+}
+
+/* ---------- Outstanding Debt ---------- */
+
+.container3 {
+  width: 100%;
+  margin: 18px 0;
+
+  padding: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #151b24
+  );
+
+  border: 1px solid #334155;
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.container3 h3 {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.outstanding {
+  margin: 0;
+  color: #fbbf24;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* ---------- Debt Details ---------- */
+
+.container4 {
+  margin-top: 15px;
+}
+
+/* ---------- Payment History ---------- */
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history > div {
+  background: #11151a !important;
+  border: 1px solid #2b323a !important;
+  border-radius: 10px !important;
+}
+
+/* ---------- Confirmation Screens ---------- */
+
+.seven,
+.section8 {
+  max-width: 600px;
+  margin: 25px auto;
+}
+
+.section8 > div {
+  background: #11151a !important;
+  border: 1px solid #292f36 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+}
+
+.section8 p {
+  color: #d1d5db;
+}
+
+/* ---------- Payment Form ---------- */
+
+.six {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Utility Classes ---------- */
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none !important;
+}
+
+.btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+/* ---------- Error / Status Messages ---------- */
+
+.p1,
+.p2,
+.p3 {
+  min-height: 22px;
+  color: #f87171 !important;
+  font-weight: 600;
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 768px) {
+
+  nav h1 {
+    font-size: 27px;
+  }
+
+  .zero {
+    padding-top: 25px;
+  }
+
+  main {
+    padding-top: 20px;
+  }
+
+  .card2 {
+    padding: 22px;
+  }
+
+  form {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------- Tablet ---------- */
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+  main,
+  .zero {
+    width: min(100% - 40px, 800px);
+  }
+
+  .container1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 599px) {
+
+  nav {
+    min-height: 64px;
+    padding: 10px 14px;
+  }
+
+  nav h1 {
+    font-size: 21px;
+  }
+
+  nav button {
+    min-height: 40px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  main,
+  .zero {
+    width: calc(100% - 24px);
+  }
+
+  .zero {
+    margin-top: 82px;
+    padding-top: 12px;
+  }
+
+  main {
+    padding-top: 8px;
+  }
+
+  form {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .container1 {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card button {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .btns,
+  .debtFormBtns {
+    gap: 8px;
+  }
+
+  .btns button,
+  .debtFormBtns button {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .btn {
+    grid-template-columns: 1fr;
+  }
+
+  .container3 {
+    padding: 16px;
+  }
+
+  .container3 h3 {
+    font-size: 15px;
+  }
+
+  .outstanding {
+    font-size: 20px;
+  }
+
+  .card2 {
+    padding: 15px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  .section8 > div {
+    padding: 18px !important;
+  }
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 380px) {
+
+  nav h1 {
+    font-size: 19px;
+  }
+
+  nav button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .btns,
+  .debtFormBtns {
+    flex-direction: column;
+  }
+
+  .btns button,
+  .debtFormBtns button {
+    width: 100%;
+  }
+
+  .container3 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .outstanding {
+    font-size: 22px;
+  }
+}
